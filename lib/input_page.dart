@@ -21,30 +21,9 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
 
 
-  Gender selectedGender = Gender.female;
+  Gender? selectedGender;
 
 
-
-  // Color maleCardColour = activeCardColour;
-  // Color femaleCardColour = activeCardColour;
-
-  // void updateColour(Gender selectedGender){
-  //   if(selectedGender == Gender.male) {
-  //     if (maleCardColour == inactiveCardColour){
-  //       maleCardColour = activeCardColour;
-  //       femaleCardColour = inactiveCardColour;
-  //     } else {
-  //       maleCardColour = inactiveCardColour;
-  //     }
-  //   } if (selectedGender == Gender.female) {
-  //     if (femaleCardColour == inactiveCardColour){
-  //       femaleCardColour = activeCardColour;
-  //       maleCardColour = inactiveCardColour;
-  //     } else {
-  //       femaleCardColour = inactiveCardColour;
-  //     }
-  //   }
-  // } REPLACE THIS FUNCTION WITH TERNARY OPERATORS
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,6 +61,11 @@ class _InputPageState extends State<InputPage> {
             )),
             Expanded(
               child: ReusableCard(
+                onPress: () {
+                  setState(() {
+                    selectedGender = Gender.male;
+                  });
+                },
                 Colour: Colors.amber,
               ),
             ),
@@ -90,12 +74,22 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: ReusableCard(
+                      onPress: () {
+                        setState(() {
+                          selectedGender = Gender.male;
+                        });
+                      },
 
                       Colour: activeCardColour,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
+                      onPress: () {
+                        setState(() {
+                          selectedGender = Gender.male;
+                        });
+                      },
                       Colour: activeCardColour,
                     ),
                   ),
