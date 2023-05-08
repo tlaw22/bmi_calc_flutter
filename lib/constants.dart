@@ -14,3 +14,7 @@ TextStyle(
   fontSize: 20,
   fontWeight: FontWeight.w900,
 );
+const kResultsPage = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 20
+);

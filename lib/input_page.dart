@@ -1,8 +1,10 @@
+import 'package:bmi_calc_flutter/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
+import 'results_page.dart';
 
 enum Gender {
   male,
@@ -17,7 +19,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender? selectedGender;
   int height = 180;
-  int weight = 60;
+  int weight = 150;
+  int age = 25;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +78,7 @@ class _InputPageState extends State<InputPage> {
                 cardChild: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'HEIGHT',
                       style: kLabelTextStyle,
                     ),
@@ -85,7 +88,7 @@ class _InputPageState extends State<InputPage> {
                       textBaseline: TextBaseline.alphabetic,
                       children: <Widget>[
                         Text(height.toString(), style: kNumberTextStyle),
-                        Text(
+                        const Text(
                           'cm',
                           style: kLabelTextStyle,
                         ),
@@ -137,18 +140,23 @@ class _InputPageState extends State<InputPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {setState(() {
+                                  weight--;
+                                });},
                                 icon: Icon(FontAwesomeIcons.minus),
                                 color: Colors.indigo,
                                 highlightColor: Colors.lightBlueAccent,
                                 iconSize: 30.0,
                                 hoverColor: Colors.lightBlueAccent,
+
                               ),
                               SizedBox(
                                 width: 10.0,
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {setState(() {
+                                  weight++;
+                                });},
                                 icon: Icon(FontAwesomeIcons.add),
                                 color: Colors.indigo,
                                 highlightColor: Colors.lightBlueAccent,
@@ -169,6 +177,46 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     child: ReusableCard(
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('AGE', style: kLabelTextStyle),
+                          // continue here
+                          Text(
+                            age.toString(),
+                            style: kNumberTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                onPressed: () {setState(() {
+                                  age--;
+                                });},
+                                icon: Icon(FontAwesomeIcons.minus),
+                                color: Colors.indigo,
+                                highlightColor: Colors.lightBlueAccent,
+                                iconSize: 30.0,
+                                hoverColor: Colors.lightBlueAccent,
+
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              IconButton(
+                                onPressed: () {setState(() {
+                                  age++;
+                                });},
+                                icon: Icon(FontAwesomeIcons.add),
+                                color: Colors.indigo,
+                                highlightColor: Colors.lightBlueAccent,
+                                iconSize: 30.0,
+                                hoverColor: Colors.lightBlueAccent,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                       onPress: () {
                         setState(() {
                           selectedGender = Gender.male;
@@ -177,19 +225,33 @@ class _InputPageState extends State<InputPage> {
                       Colour: kInactiveCardColour,
                     ),
                   ),
+
                 ],
+
               ),
+
             ),
-            Container(
-              color: kBottomContainerColour,
-              margin: const EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: kBottomContainerHeight,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
+
+              } ,
+              child: Container(
+                child: Center
+                  (child: Text('CALCULATE', style: kResultsPage,)),
+                padding: EdgeInsets.only(bottom: 10),
+                color: Colors.orange,
+                margin: const EdgeInsets.only(top: 10.0),
+                width: double.infinity,
+                height: kBottomContainerHeight,
+              ),
             ),
           ],
         ));
   }
 }
+// There was no need to Rebuild the RawMaterialButton
+// I don't know how to make a bg fill but I can wrap it in a container later.
 
 class RoundIconButton extends StatelessWidget {
   const RoundIconButton({Key? key, this.icon});
