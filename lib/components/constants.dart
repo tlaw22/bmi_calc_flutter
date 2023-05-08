@@ -16,5 +16,6 @@ TextStyle(
 );
 const kResultsPage = TextStyle(
   fontWeight: FontWeight.bold,
-  fontSize: 20
+  fontSize: 32,
+  color: Colors.amber
 );

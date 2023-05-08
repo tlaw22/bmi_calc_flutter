@@ -1,11 +1,12 @@
-import 'package:bmi_calc_flutter/results_page.dart';
+
+import 'package:bmi_calc_flutter/screens/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'icon_content.dart';
-import 'reusable_card.dart';
-import 'constants.dart';
+import '../icon_content.dart';
+import '../components/reusable_card.dart';
+import '../components/constants.dart';
 import 'results_page.dart';
-
+import '../components/bottom_button.dart';
 enum Gender {
   male,
   female,
@@ -231,25 +232,16 @@ class _InputPageState extends State<InputPage> {
               ),
 
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
+            BottomButton(buttonTitle: 'CALCULATE',
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
 
-              } ,
-              child: Container(
-                child: Center
-                  (child: Text('CALCULATE', style: kResultsPage,)),
-                padding: EdgeInsets.only(bottom: 10),
-                color: Colors.orange,
-                margin: const EdgeInsets.only(top: 10.0),
-                width: double.infinity,
-                height: kBottomContainerHeight,
-              ),
-            ),
+            }),
           ],
         ));
   }
 }
+
 // There was no need to Rebuild the RawMaterialButton
 // I don't know how to make a bg fill but I can wrap it in a container later.
 

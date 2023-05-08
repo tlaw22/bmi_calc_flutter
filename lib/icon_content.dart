@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import 'components/constants.dart';
 class IconContents extends StatelessWidget {
 
   final IconData icon;
