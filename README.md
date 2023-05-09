@@ -3,14 +3,5 @@
 Caluculates body mass
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[BMI.APK](http://apps.pascoclass.net/bmi/bmi.apk)
+![bmi](https://github.com/tlaw22/bmi_calc_flutter/assets/108081811/81c2284e-0411-4637-b70f-7a5f301499a9)
