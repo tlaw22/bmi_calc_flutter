@@ -7,6 +7,7 @@ import '../components/reusable_card.dart';
 import '../components/constants.dart';
 import 'results_page.dart';
 import '../components/bottom_button.dart';
+import 'package:bmi_calc_flutter/calculateor_brain.dart';
 enum Gender {
   male,
   female,
@@ -234,7 +235,17 @@ class _InputPageState extends State<InputPage> {
             ),
             BottomButton(buttonTitle: 'CALCULATE',
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const ResultsPage()));
+              // Last major function
+
+              CalculatorBrain calc = CalculatorBrain(height: height, weight: weight);
+
+
+
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage(
+                interpretation: calc.getInterpretation(),
+                bmiResult: calc.calculateBMI().toStringAsFixed(4),
+                resultText: calc.getResult(),
+              )));
 
             }),
           ],
@@ -245,27 +256,5 @@ class _InputPageState extends State<InputPage> {
 // There was no need to Rebuild the RawMaterialButton
 // I don't know how to make a bg fill but I can wrap it in a container later.
 
-class RoundIconButton extends StatelessWidget {
-  const RoundIconButton({Key? key, this.icon});
-
-  final IconData? icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return const RawMaterialButton(
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
-      elevation: 6.0,
-      disabledElevation: 1.0,
-      onPressed: null,
-      constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
-      child: Icon(FontAwesomeIcons.facebook), // This line does not accept the
-    );
-  }
-}
-
-/*
 
 
-
- */
