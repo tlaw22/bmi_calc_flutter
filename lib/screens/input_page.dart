@@ -46,7 +46,7 @@ class _InputPageState extends State<InputPage> {
                   Colour: selectedGender == Gender.male
                       ? kActiveCardColour
                       : kInactiveCardColour,
-                  cardChild: IconContents(
+                  cardChild: const IconContents(
                     icon: FontAwesomeIcons.mars,
                     label: 'MALE',
                   ),
@@ -61,7 +61,7 @@ class _InputPageState extends State<InputPage> {
                   Colour: selectedGender == Gender.female
                       ? kActiveCardColour
                       : kInactiveCardColour,
-                  cardChild: IconContents(
+                  cardChild: const IconContents(
                     icon: FontAwesomeIcons.venus,
                     label: 'FEMALE',
                   ),
@@ -100,10 +100,10 @@ class _InputPageState extends State<InputPage> {
                         thumbColor: Colors.purpleAccent,
                         overlayColor: Colors.purple,
                         thumbShape:
-                            RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                            const RoundSliderThumbShape(enabledThumbRadius: 15.0),
                         overlayShape:
-                            RoundSliderOverlayShape(overlayRadius: 30),
-                        rangeThumbShape: RoundRangeSliderThumbShape(
+                            const RoundSliderOverlayShape(overlayRadius: 30),
+                        rangeThumbShape: const RoundRangeSliderThumbShape(
                             enabledThumbRadius: 10.0),
                       ),
                       child: Slider(
@@ -144,21 +144,21 @@ class _InputPageState extends State<InputPage> {
                                 onPressed: () {setState(() {
                                   weight--;
                                 });},
-                                icon: Icon(FontAwesomeIcons.minus),
+                                icon: const Icon(FontAwesomeIcons.minus),
                                 color: Colors.indigo,
                                 highlightColor: Colors.lightBlueAccent,
                                 iconSize: 30.0,
                                 hoverColor: Colors.lightBlueAccent,
 
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10.0,
                               ),
                               IconButton(
                                 onPressed: () {setState(() {
                                   weight++;
                                 });},
-                                icon: Icon(FontAwesomeIcons.add),
+                                icon: const Icon(FontAwesomeIcons.add),
                                 color: Colors.indigo,
                                 highlightColor: Colors.lightBlueAccent,
                                 iconSize: 30.0,
@@ -181,7 +181,7 @@ class _InputPageState extends State<InputPage> {
                       cardChild: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('AGE', style: kLabelTextStyle),
+                          const Text('AGE', style: kLabelTextStyle),
                           // continue here
                           Text(
                             age.toString(),
@@ -194,21 +194,21 @@ class _InputPageState extends State<InputPage> {
                                 onPressed: () {setState(() {
                                   age--;
                                 });},
-                                icon: Icon(FontAwesomeIcons.minus),
+                                icon: const Icon(FontAwesomeIcons.minus),
                                 color: Colors.indigo,
                                 highlightColor: Colors.lightBlueAccent,
                                 iconSize: 30.0,
                                 hoverColor: Colors.lightBlueAccent,
 
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10.0,
                               ),
                               IconButton(
                                 onPressed: () {setState(() {
                                   age++;
                                 });},
-                                icon: Icon(FontAwesomeIcons.add),
+                                icon: const Icon(FontAwesomeIcons.add),
                                 color: Colors.indigo,
                                 highlightColor: Colors.lightBlueAccent,
                                 iconSize: 30.0,
@@ -234,7 +234,7 @@ class _InputPageState extends State<InputPage> {
             ),
             BottomButton(buttonTitle: 'CALCULATE',
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const ResultsPage()));
 
             }),
           ],

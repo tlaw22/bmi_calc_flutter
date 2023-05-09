@@ -7,7 +7,7 @@ import 'reusable_card.dart';
 import 'constants.dart';
 import '../screens/results_page.dart';
 String buttonTitle = 'CALCULATE';
-
+@immutable
 class BottomButton extends StatelessWidget {
 
   // final Function opTap; Does not work since Flutter 2.9

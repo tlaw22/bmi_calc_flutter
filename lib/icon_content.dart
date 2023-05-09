@@ -13,7 +13,7 @@ class IconContents extends StatelessWidget {
           icon,
           size: 50,
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Text(
@@ -24,5 +24,5 @@ class IconContents extends StatelessWidget {
     );
   }
 
-  IconContents({required this.label, required this.icon});
+  const IconContents({super.key, required this.label, required this.icon});
 }
