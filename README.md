@@ -1,6 +1,6 @@
 # bmi_calc_flutter
 
-Caluculates body mass
+Caluculates body mass -  The math is wrong in the calculate function but the entire app does run and preform a calculation.
 
 ## Download the Android Release
 [BMI.APK](http://apps.pascoclass.net/bmi/bmi.apk)
