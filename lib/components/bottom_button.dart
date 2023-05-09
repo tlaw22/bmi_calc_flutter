@@ -23,7 +23,8 @@ class BottomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         child: Center
-          (child: Text(buttonTitle, style: kResultsPage,)),
+          (child: Text(buttonTitle, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900,
+        color: Color(0xFF0E1525)),)),
         padding: EdgeInsets.only(bottom: 10),
         color: Colors.orange,
         margin: const EdgeInsets.only(top: 10.0),

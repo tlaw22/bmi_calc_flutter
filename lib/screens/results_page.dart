@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../components/constants.dart';
 import '../components/reusable_card.dart';
 import 'package:bmi_calc_flutter/screens/input_page.dart';
@@ -37,6 +38,7 @@ class ResultsPage extends StatelessWidget {
                     Text(resultText.toUpperCase(), style: kResultsPage),
                     Text(bmiResult, style: kResultsPage, textScaleFactor: 4),
                     Text(interpretation.toUpperCase()),
+                    Icon(FontAwesomeIcons.arrowsSpin, size: 30,)
 
                   ],
 

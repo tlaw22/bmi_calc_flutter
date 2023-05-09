@@ -8,6 +8,8 @@ import '../components/constants.dart';
 import 'results_page.dart';
 import '../components/bottom_button.dart';
 import 'package:bmi_calc_flutter/calculateor_brain.dart';
+
+
 enum Gender {
   male,
   female,
@@ -21,15 +23,15 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender? selectedGender;
   int height = 180;
-  int weight = 150;
-  int age = 25;
+  int weight = 200;
+  int age = 35;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFF0E1525),
-          title: Text('BMI CALCULATOR'),
+          title: Text('NayNayOmeter'),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -243,7 +245,7 @@ class _InputPageState extends State<InputPage> {
 
               Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage(
                 interpretation: calc.getInterpretation(),
-                bmiResult: calc.calculateBMI().toStringAsFixed(4),
+                bmiResult: calc.calculateBMI().toStringAsFixed(1),
                 resultText: calc.getResult(),
               )));
 

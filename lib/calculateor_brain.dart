@@ -10,7 +10,8 @@ class CalculatorBrain {
   CalculatorBrain({required this.height, required this.weight});
 //     _bmi = weight / pow(height / 100, 2);
   double calculateBMI() {
-    return weight / pow(height, 2) / 100;
+    double _bmi = weight / pow(height / 100, 2);
+    return _bmi;
   }
 
   String getResult() {
